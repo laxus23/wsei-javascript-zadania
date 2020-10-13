@@ -19,6 +19,7 @@ console.log(52 / 16);
 console.log(5 * 2);
 
 /*
+Zadanie 3
 Wpisz do konsoli i sprawdź co się wyświetli:
 
 ```
