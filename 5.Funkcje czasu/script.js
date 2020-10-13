@@ -13,7 +13,7 @@ let interval = setInterval(function () {
 Po 2 sekundach od uruchomienia programu wyświetl w konsoli wszystkie elementy dowolnej tablicy.
     Następnie wyświetl w konsoli co 3 sekundy kolejny element tej tablicy.*/
 
-let namesAndNumbers = [1, 2, 3, 'tiger', 'lion', 'cat']
+let namesAndNumbers = [1, 2, 3, 'tiger', 'lion', 'cat'];
 setTimeout(function () {
     console.log(namesAndNumbers);
     let counterOfElements = 0;
