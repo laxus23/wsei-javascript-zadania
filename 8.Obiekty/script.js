@@ -28,7 +28,7 @@ Następnie metoda ta powinna zapisywać wynik we właściwości sum tego obiektu
 
 let sumOfNumbers = {
     sum: 0,
-    sumOfNumber(array) {
+    sumOfNumber: function (array) {
         return sumOfNumbers.sum = array.reduce((acc, number) => acc += number)
     }
 }
