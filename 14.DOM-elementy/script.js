@@ -3,13 +3,14 @@
 Stwórz funkcję do której przekażesz jako parametr listę elementów o klasie more-divs. Następnie zwróć z tej funkcji tablicę tagów utworzoną na podstawie przekazanego parametru.
 Wynik wyświetl w konsoli.*/
 
-function getTagsFromDivs(elems){
+function getTagsFromDivs(elems) {
     const tags = [];
-    for (let i = 0; i < elems.length; i++){
+    for (let i = 0; i < elems.length; i++) {
         tags.push(elems[i].tagName);
     }
     return tags;
 }
+
 const divs = document.getElementsByClassName('more-divs');
 console.log(getTagsFromDivs(divs));
 
@@ -24,7 +25,8 @@ Stwórz funkcję i przekaż do niej jako parametr element short-list. Następnie
 5. obiekt dataset */
 
 const elem = document.getElementsByClassName("short-list")[0];
-function printElems(elem){
+
+function printElems(elem) {
     console.log("Kod html wewnętrzny: ", elem.innerHTML);
     console.log("Kod html zewnętrzy: ", elem.outerHTML);
     console.log("Lista klas elementu w postaci stringu: ", elem.className);
@@ -42,13 +44,13 @@ const a = Number(data.dataset.numberone);
 const b = Number(data.dataset.numbertwo);
 const c = Number(data.dataset.numberThree);
 
-function getResult(a, b, c){
+function getResult(a, b, c) {
     let sum = a + b + c;
     let subtraction = a - b - c
-    return  [sum, subtraction];
+    return [sum, subtraction];
 }
 
-console.log(getResult(a,b,c));
+console.log(getResult(a, b, c));
 
 /* Zadanie 4
 
@@ -71,13 +73,15 @@ Następnie funkcja powinna wypisać w konsoli pojedynczo wszystkie klasy a na ko
 Następnie usuń wszystkie klasy temu elementowi i wypisz w konsoli tekst: "Usunięto wszystkie klasy".
 */
 const data1 = document.querySelector('#classes');
-function Classes(listOfClasses){
+
+function Classes(listOfClasses) {
     console.log(listOfClasses);
     listOfClasses.forEach(classes => console.log(classes));
     console.log([...listOfClasses].join('+'));
     data1.classList = '';
     console.log('Usunięto wszystko klasy');
 }
+
 Classes(data1.classList);
 
 
@@ -87,9 +91,10 @@ Znajdź wszystkie elementy li w elemencie longList.
 Przekaż te elementy do funkcji której zadaniem będzie dodanie każdemu elementowi li atrybutu data-text="text" ale tylko tym elementom w których taki data atrybut nie istnieje.
 */
 const data2 = document.querySelectorAll('#longList li');
-function addAttributeDataToLiElems(elems){
+
+function addAttributeDataToLiElems(elems) {
     elems.forEach((elem) => {
-        if(!elem.dataset.text){
+        if (!elem.dataset.text) {
             elem.dataset.text = 'text';
         }
     })
@@ -109,14 +114,14 @@ Napisz funkcję która będzie przyjmować parametr typu string. Następnie stri
 Obiekt ten przekaż do drugiej funkcji w której odczytasz string z obiektu i przypisz go do zmiennej. Następnie ustaw taką klasę elementowi o id myDiv.
 */
 
-function buildObject(str){
+function buildObject(str) {
     const newObject = {
         newClass: str
     }
     return newObject
 }
 
-function addClass(newObject){
+function addClass(newObject) {
     const newClass = newObject.newClass;
     document.querySelector('#myDiv').classList.add(newClass);
 }
@@ -129,14 +134,15 @@ Napisz funkcję która będzie dodawać odpowiednią klasę do elementu o id "nu
 Jeśli liczba będzie parzysta ustaw klasę 'even' jak nieparzysta 'odd;
 */
 
-function addProperClassToId(number){
+function addProperClassToId(number) {
     const numbers = document.querySelector('#numbers');
-    if(number % 2 == 0) {
+    if (number % 2 == 0) {
         numbers.classList.add('even');
     } else {
         numbers.classList.add('odd');
     }
 }
+
 addProperClassToId(Math.floor(Math.random() * 11));
 
 
@@ -145,9 +151,10 @@ addProperClassToId(Math.floor(Math.random() * 11));
 Napisz funkcję do której przekaż element o id "longList". Następnie zwróć tablicę wypełnioną wartościami pobranymi z elementów ten listy.
 */
 const data3 = document.querySelectorAll('#longList li');
-function getTableWithElements(elems){
+
+function getTableWithElements(elems) {
     let newTable = [];
-    elems.forEach((elem)=>{
+    elems.forEach((elem) => {
         newTable.push(elem.innerText);
     })
     return newTable;
@@ -161,7 +168,8 @@ Napisz funkcję do której przekażesz listę dzieci elementu o id longList.
 Następnie zamień wszystkie wartości tych elementów na losowe liczby z zakresu 0-10 jednocześnie przechowując starą wartość w data atrybucie.*/
 
 const data4 = document.querySelector('#longList').children;
-function changeValues (elems){
+
+function changeValues(elems) {
     [...elems].forEach((elem) => {
         elem.dataset.beforechanges = elem.textContent;
         elem.textContent = Math.floor(Math.random() * 11);
